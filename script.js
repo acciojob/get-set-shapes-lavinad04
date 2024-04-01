@@ -45,3 +45,7 @@ console.log(square.width); // Output: 7
 console.log(square.height); // Output: 7
 console.log(square.getArea()); // Output: 49
 console.log(square.getPerimeter()); // Output: 28
+
+// Do not change the code below this line
+window.Rectangle = Rectangle;
+window.Square = Square;
