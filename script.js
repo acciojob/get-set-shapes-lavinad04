@@ -13,7 +13,10 @@ class Rectangle {
 	}
 
 	getArea(){
-		return this.width*this.height;
+		let areaRec = this.width*this.height;
+		let areaSqu =  this.side*this.side;
+		return areaRec,areaSqu;
+		
 	}
 	
 }
@@ -25,7 +28,8 @@ class Square extends Rectangle {
 	}
 
 	getPerimeter(){
-		return 4*this.side;
+		let perimeter = 4*this.side;
+		return perimeter;
 	}
 }
 
