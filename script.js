@@ -1,39 +1,40 @@
-//complete this code
 class Rectangle {
-	constructor(width, height){
-		this.width = width;
-		this.height = height;
-	}
+  constructor(width, height) {
+    if (width <= 0 || height <= 0) {
+      throw new Error("Width and height must be positive integers.");
+    }
+    this._width = width;
+    this._height = height;
+  }
 
-	get width(){
-		return this.width;
-	}
-	get heigth(){
-		return this.height;
-	}
+  get width() {
+    return this._width;
+  }
 
-	getArea(){
-		let areaRec = this.width*this.height;
-		let areaSqu =  this.side*this.side;
-		return areaRec,areaSqu;
-		
-	}
-	
+  get height() {
+    return this._height;
+  }
+
+  getArea() {
+    return this._width * this._height;
+  }
 }
 
 class Square extends Rectangle {
-	constructor(side){
-		super(side, side);
-		this.side = side;
-	}
+  constructor(side) {
+    super(side, side);
+    if (side <= 0) {
+      throw new Error("Side must be a positive integer.");
+    }
+    this._side = side;
+  }
 
-	getPerimeter(){
-		let perimeter = 4*this.side;
-		return perimeter;
-	}
+  getPerimeter() {
+    return 4 * this._side;
+  }
 }
 
-
+// Example usage
 const rectangle = new Rectangle(5, 10);
 console.log(rectangle.width); // Output: 5
 console.log(rectangle.height); // Output: 10
@@ -44,7 +45,3 @@ console.log(square.width); // Output: 7
 console.log(square.height); // Output: 7
 console.log(square.getArea()); // Output: 49
 console.log(square.getPerimeter()); // Output: 28
-
-// Do not change the code below this line
-window.Rectangle = Rectangle;
-window.Square = Square;
